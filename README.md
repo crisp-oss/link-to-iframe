@@ -100,7 +100,8 @@ Currently, the following services are supported out of the box:
 - Twitter/X (supports formats: twitter.com/username/status/ID, x.com/username/status/ID)
 - Figma (supports formats: figma.com/file/ID/Project-Name, figma.com/proto/ID/Project-Name, figma.com/design/ID/Project-Name)
 - Google Maps (supports formats: google.com/maps?..., google.com/maps/place/..., goo.gl/maps/...)
-- GitHub Gist (supports format: gist.github.com/username/gistId)
+- Google Docs (supports formats: docs.google.com/document/d/..., docs.google.com/spreadsheets/d/..., docs.google.com/presentation/d/...)
+- PDF (supports embedding PDF files)
 - CodePen (supports formats: codepen.io/username/pen/penId, codepen.io/username/full/penId)
 
 ### Contributing New Services

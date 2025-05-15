@@ -13,6 +13,7 @@ import { twitterTransformer } from "./twitter";
 import { figmaTransformer } from "./figma";
 import { googleMapsTransformer } from "./googleMaps";
 import { codepenTransformer } from "./codepen";
+import { googleDocsTransformer } from "./google-docs-pdf";
 
 // Export individual transformers
 export { youtubeTransformer } from "./youtube";
@@ -29,6 +30,7 @@ export { twitterTransformer } from "./twitter";
 export { figmaTransformer } from "./figma";
 export { googleMapsTransformer } from "./googleMaps";
 export { codepenTransformer } from "./codepen";
+export { googleDocsTransformer } from "./google-docs-pdf";
 
 // Default array of transformers
 export const defaultTransformers: Transformer[] = [
@@ -46,4 +48,5 @@ export const defaultTransformers: Transformer[] = [
   figmaTransformer,
   googleMapsTransformer,
   codepenTransformer,
+  googleDocsTransformer,
 ]; 
