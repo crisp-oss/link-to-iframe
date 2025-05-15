@@ -15,6 +15,9 @@ export interface Transformer {
   /** Display name of the transformer */
   name: string;
   
+  /** Priority of the transformer (higher values are processed first) */
+  priority?: number;
+  
   /** Regular expression that matches the URL pattern */
   pattern?: RegExp;
   
@@ -34,4 +37,10 @@ export interface LinkToIframeOptions {
 
   /** Return the attributes object instead of HTML string */
   returnObject?: boolean;
+}
+
+export interface TransformerInfo {
+  key: string;
+  name: string;
+  priority: number;
 } 

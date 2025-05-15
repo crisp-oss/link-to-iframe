@@ -15,6 +15,7 @@ import { IframeAttributes, Transformer } from "../types";
 export const youtubeTransformer: Transformer = {
   key: "youtube",
   name: "YouTube",
+  priority: 10,
   patterns: [
     // www.youtube.com/watch?v=
     /https?:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/i,

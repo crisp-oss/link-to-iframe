@@ -1,4 +1,4 @@
-import { linkToIframe } from "../src/index";
+import { linkToIframe, getAllTransformers } from "../src/index";
 
 describe("linkToIframe", () => {
   describe("YouTube transformer", () => {
@@ -134,5 +134,52 @@ describe("linkToIframe", () => {
   it("returns null if no transformer matches with returnObject option", () => {
     const result = linkToIframe("https://example.com/no-match", { returnObject: true });
     expect(result).toBeNull();
+  });
+});
+
+describe("getAllTransformers", () => {
+  it("returns an array of transformer info objects", () => {
+    const transformers = getAllTransformers();
+    
+    // Check that it's an array with items
+    expect(Array.isArray(transformers)).toBe(true);
+    expect(transformers.length).toBeGreaterThan(0);
+    
+    // Check structure of the first transformer
+    const firstTransformer = transformers[0];
+    expect(firstTransformer).toHaveProperty("key");
+    expect(firstTransformer).toHaveProperty("name");
+    expect(firstTransformer).toHaveProperty("priority");
+    expect(typeof firstTransformer.key).toBe("string");
+    expect(typeof firstTransformer.name).toBe("string");
+    expect(typeof firstTransformer.priority).toBe("number");
+  });
+  
+  it("sorts transformers by priority (highest first)", () => {
+    const transformers = getAllTransformers();
+    
+    // Check that the array is sorted by priority (descending)
+    for (let i = 0; i < transformers.length - 1; i++) {
+      expect(transformers[i].priority).toBeGreaterThanOrEqual(transformers[i + 1].priority);
+    }
+  });
+  
+  it("handles additional transformers", () => {
+    const customTransformer = {
+      key: "custom-test",
+      name: "Custom Test",
+      priority: 100,
+      pattern: /test/,
+      transform: () => ({ src: "test" }),
+    };
+    
+    const transformers = getAllTransformers({
+      includeAdditional: [customTransformer],
+    });
+    
+    // First transformer should be our custom one with high priority
+    expect(transformers[0].key).toBe("custom-test");
+    expect(transformers[0].name).toBe("Custom Test");
+    expect(transformers[0].priority).toBe(100);
   });
 }); 

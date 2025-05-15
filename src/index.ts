@@ -1,4 +1,4 @@
-import { IframeAttributes, LinkToIframeOptions, Transformer } from "./types";
+import { IframeAttributes, LinkToIframeOptions, Transformer, TransformerInfo } from "./types";
 import { defaultTransformers } from "./transformers";
 
 /**
@@ -58,6 +58,28 @@ export function linkToIframe(url: string, options: LinkToIframeOptions = {}): st
 }
 
 /**
+ * Get all available transformers with their key, name, and priority, sorted by priority (highest first)
+ * 
+ * @param options Configuration options
+ * @returns Array of transformer info objects sorted by priority
+ */
+export function getAllTransformers(options: { includeAdditional?: Transformer[] } = {}): TransformerInfo[] {
+  const { includeAdditional = [] } = options;
+  
+  // Combine default transformers with any additional transformers
+  const allTransformers = [...defaultTransformers, ...includeAdditional];
+  
+  // Map transformers to TransformerInfo objects and sort by priority (higher values first)
+  return allTransformers
+    .map(transformer => ({
+      key: transformer.key,
+      name: transformer.name,
+      priority: transformer.priority ?? 0
+    }))
+    .sort((a, b) => b.priority - a.priority);
+}
+
+/**
  * Render an iframe HTML string from attributes
  * 
  * @param attributes Iframe attributes
@@ -84,5 +106,5 @@ function renderIframe(attributes: IframeAttributes): string {
   return html;
 }
 
-export { Transformer, IframeAttributes, LinkToIframeOptions };
+export { Transformer, IframeAttributes, LinkToIframeOptions, TransformerInfo };
 export * from "./transformers"; 

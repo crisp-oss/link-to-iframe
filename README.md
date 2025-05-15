@@ -94,6 +94,35 @@ const vimeoHtml = linkToIframe("https://vimeo.com/123456789", {
 });
 console.log(vimeoHtml);
 // <iframe width="560" height="315" src="https://player.vimeo.com/video/123456789" allowfullscreen frameborder="0"></iframe>
+
+// Get all available transformers
+import { getAllTransformers } from "link-to-iframe";
+
+const transformers = getAllTransformers();
+console.log(transformers);
+// [
+//   { key: "youtube", name: "YouTube", priority: 10 },
+//   { key: "loom", name: "Loom", priority: 0 },
+//   ...
+// ]
+
+// Include custom transformers in the list
+const customTransformer = {
+  key: "custom-service",
+  name: "Custom Service",
+  priority: 100, // Higher priority will appear first in the sorted list
+  pattern: /custom-service\.com\/video\/(\d+)/i,
+  transform: (url, matches) => ({
+    src: `https://custom-service.com/embed/${matches[1]}`,
+    width: 560,
+    height: 315,
+  })
+};
+
+const allTransformers = getAllTransformers({
+  includeAdditional: [customTransformer]
+});
+// First item will be the custom transformer due to higher priority
 ```
 
 ## Supported Services
@@ -166,6 +195,36 @@ Currently, the following services are supported out of the box:
 ### Contributing New Services
 
 The library is designed to be easy to extend and non-opinionated. Contributions for new service integrations are welcome and will be merged easily as long as they are simple enough. Contributions made with AI assistance (like GPT) are also accepted. See the custom transformer example in the Usage section for a starting point.
+
+## API Reference
+
+### linkToIframe(url, options)
+
+Converts a URL to an iframe HTML string or attributes object.
+
+**Parameters:**
+- `url` (string): The URL to convert to an iframe
+- `options` (object, optional): Configuration options
+  - `defaultAttributes` (object, optional): Default attributes to apply to all iframes
+  - `additionalTransformers` (array, optional): Additional transformers to use
+  - `returnObject` (boolean, optional): Return attributes object instead of HTML string
+
+**Returns:**
+- HTML iframe string, attributes object, or null if no transformer matches
+
+### getAllTransformers(options)
+
+Get all available transformers with their key, name, and priority, sorted by priority (highest first).
+
+**Parameters:**
+- `options` (object, optional): Configuration options
+  - `includeAdditional` (array, optional): Additional transformers to include in the list
+
+**Returns:**
+- Array of transformer info objects, each containing:
+  - `key` (string): Unique identifier for the transformer
+  - `name` (string): Display name of the transformer
+  - `priority` (number): Priority value (higher priorities are listed first)
 
 ## Customization
 
