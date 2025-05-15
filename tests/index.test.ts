@@ -30,6 +30,25 @@ describe("linkToFrame", () => {
     });
   });
 
+  describe("Typeform transformer", () => {
+    it("transforms form.typeform.com URL", () => {
+      const result = linkToFrame("https://form.typeform.com/to/abc123xyz");
+      expect(result).toContain("src=\"https://form.typeform.com/to/abc123xyz?typeform-embed=embed-widget\"");
+      expect(result).toContain("width=\"640\"");
+      expect(result).toContain("height=\"500\"");
+      expect(result).toContain("frameborder=\"0\"");
+      expect(result).toContain("allow=\"camera; microphone; autoplay; encrypted-media; fullscreen; picture-in-picture;\"");
+      expect(result).toContain("allowfullscreen");
+    });
+
+    it("transforms workspace.typeform.com URL", () => {
+      const result = linkToFrame("https://myworkspace.typeform.com/to/abc123xyz");
+      expect(result).toContain("src=\"https://myworkspace.typeform.com/to/abc123xyz?typeform-embed=embed-widget\"");
+      expect(result).toContain("width=\"640\"");
+      expect(result).toContain("height=\"500\"");
+    });
+  });
+
   describe("Options", () => {
     it("applies default attributes", () => {
       const result = linkToFrame("https://youtu.be/dQw4w9WgXcQ", {

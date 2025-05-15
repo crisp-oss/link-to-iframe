@@ -103,6 +103,7 @@ Currently, the following services are supported out of the box:
 - Google Docs (supports formats: docs.google.com/document/d/..., docs.google.com/spreadsheets/d/..., docs.google.com/presentation/d/...)
 - PDF (supports embedding PDF files)
 - CodePen (supports formats: codepen.io/username/pen/penId, codepen.io/username/full/penId)
+- Typeform (supports formats: form.typeform.com/to/FORM_ID, [workspace].typeform.com/to/FORM_ID)
 
 ### Contributing New Services
 
