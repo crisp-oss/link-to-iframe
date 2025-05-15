@@ -95,6 +95,13 @@ Currently, the following services are supported out of the box:
 - Streamable (supports format: streamable.com/ID)
 - TikTok (supports format: tiktok.com/@username/video/ID)
 - Wistia (supports format: wistia.com/medias/ID)
+- Vimeo (supports formats: vimeo.com/ID, vimeo.com/channels/staffpicks/ID, player.vimeo.com/video/ID)
+- Twitch (supports formats: twitch.tv/channel, twitch.tv/videos/ID, twitch.tv/collections/ID, clips.twitch.tv/Clip)
+- Twitter/X (supports formats: twitter.com/username/status/ID, x.com/username/status/ID)
+- Figma (supports formats: figma.com/file/ID/Project-Name, figma.com/proto/ID/Project-Name, figma.com/design/ID/Project-Name)
+- Google Maps (supports formats: google.com/maps?..., google.com/maps/place/..., goo.gl/maps/...)
+- GitHub Gist (supports format: gist.github.com/username/gistId)
+- CodePen (supports formats: codepen.io/username/pen/penId, codepen.io/username/full/penId)
 
 ### Contributing New Services
 
