@@ -1,6 +1,6 @@
 {
   "name": "link-to-iframe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Transform links to embeddable iframes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
