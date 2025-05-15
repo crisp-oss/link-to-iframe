@@ -168,7 +168,7 @@ describe("getAllTransformers", () => {
     const customTransformer = {
       key: "custom-test",
       name: "Custom Test",
-      priority: 100,
+      priority: 1000,
       pattern: /test/,
       transform: () => ({ src: "test" }),
     };
@@ -180,6 +180,6 @@ describe("getAllTransformers", () => {
     // First transformer should be our custom one with high priority
     expect(transformers[0].key).toBe("custom-test");
     expect(transformers[0].name).toBe("Custom Test");
-    expect(transformers[0].priority).toBe(100);
+    expect(transformers[0].priority).toBe(1000);
   });
 }); 

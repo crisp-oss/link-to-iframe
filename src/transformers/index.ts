@@ -61,6 +61,7 @@ import { calcomTransformer } from "./calcom";
 import { sutoriTransformer } from "./sutori";
 import { guideflowTransformer } from "./guideflow";
 import { youformTransformer } from "./youform";
+import { notionTransformer } from "./notion";
 
 // Export individual transformers
 export { youtubeTransformer } from "./youtube";
@@ -125,6 +126,7 @@ export { calcomTransformer } from "./calcom";
 export { sutoriTransformer } from "./sutori";
 export { guideflowTransformer } from "./guideflow";
 export { youformTransformer } from "./youform";
+export { notionTransformer } from "./notion";
 
 // Default array of transformers
 export const defaultTransformers: Transformer[] = [
@@ -190,4 +192,5 @@ export const defaultTransformers: Transformer[] = [
   sutoriTransformer,
   guideflowTransformer,
   youformTransformer,
+  notionTransformer,
 ]; 

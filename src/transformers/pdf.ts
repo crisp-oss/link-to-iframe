@@ -9,6 +9,7 @@ export const pdfTransformer: Transformer = {
   key: "pdf",
   name: "Pdf",
   pattern: /(?:https?:\/\/)?(?:[\w.-]+(?:\/[\w\d./-]*)?)\.pdf(?:\?.*)?$/i,
+  priority: 100,
   
   transform: (url: string): IframeAttributes => {
     return {
