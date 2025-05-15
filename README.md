@@ -36,20 +36,20 @@ npm install link-to-iframe
 ## Usage
 
 ```typescript
-import { linkToFrame } from "link-to-iframe";
+import { linkToIframe } from "link-to-iframe";
 
 // YouTube example
-const youtubeHtml = linkToFrame("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+const youtubeHtml = linkToIframe("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 console.log(youtubeHtml);
 // <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 // Loom example
-const loomHtml = linkToFrame("https://www.loom.com/share/abcdef123456");
+const loomHtml = linkToIframe("https://www.loom.com/share/abcdef123456");
 console.log(loomHtml);
 // <iframe width="560" height="315" src="https://www.loom.com/embed/abcdef123456" frameborder="0" allowfullscreen></iframe>
 
 // Custom attributes for all iframes
-const customHtml = linkToFrame("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {
+const customHtml = linkToIframe("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {
   defaultAttributes: {
     width: 640,
     height: 360,
@@ -76,7 +76,7 @@ const vimeoTransformer: Transformer = {
   }
 };
 
-const vimeoHtml = linkToFrame("https://vimeo.com/123456789", {
+const vimeoHtml = linkToIframe("https://vimeo.com/123456789", {
   additionalTransformers: [vimeoTransformer]
 });
 console.log(vimeoHtml);

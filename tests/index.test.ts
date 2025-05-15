@@ -1,9 +1,9 @@
-import { linkToFrame } from "../src/index";
+import { linkToIframe } from "../src/index";
 
-describe("linkToFrame", () => {
+describe("linkToIframe", () => {
   describe("YouTube transformer", () => {
     it("transforms youtube.com URL", () => {
-      const result = linkToFrame("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+      const result = linkToIframe("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
       expect(result).toContain("src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\"");
       expect(result).toContain("width=\"560\"");
       expect(result).toContain("height=\"315\"");
@@ -12,7 +12,7 @@ describe("linkToFrame", () => {
     });
 
     it("transforms youtu.be URL", () => {
-      const result = linkToFrame("https://youtu.be/dQw4w9WgXcQ");
+      const result = linkToIframe("https://youtu.be/dQw4w9WgXcQ");
       expect(result).toContain("src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\"");
       expect(result).toContain("width=\"560\"");
       expect(result).toContain("height=\"315\"");
@@ -21,7 +21,7 @@ describe("linkToFrame", () => {
 
   describe("Loom transformer", () => {
     it("transforms loom URL", () => {
-      const result = linkToFrame("https://www.loom.com/share/abcdef123456");
+      const result = linkToIframe("https://www.loom.com/share/abcdef123456");
       expect(result).toContain("src=\"https://www.loom.com/embed/abcdef123456\"");
       expect(result).toContain("width=\"560\"");
       expect(result).toContain("height=\"315\"");
@@ -32,7 +32,7 @@ describe("linkToFrame", () => {
 
   describe("Typeform transformer", () => {
     it("transforms form.typeform.com URL", () => {
-      const result = linkToFrame("https://form.typeform.com/to/abc123xyz");
+      const result = linkToIframe("https://form.typeform.com/to/abc123xyz");
       expect(result).toContain("src=\"https://form.typeform.com/to/abc123xyz?typeform-embed=embed-widget\"");
       expect(result).toContain("width=\"640\"");
       expect(result).toContain("height=\"500\"");
@@ -42,7 +42,7 @@ describe("linkToFrame", () => {
     });
 
     it("transforms workspace.typeform.com URL", () => {
-      const result = linkToFrame("https://myworkspace.typeform.com/to/abc123xyz");
+      const result = linkToIframe("https://myworkspace.typeform.com/to/abc123xyz");
       expect(result).toContain("src=\"https://myworkspace.typeform.com/to/abc123xyz?typeform-embed=embed-widget\"");
       expect(result).toContain("width=\"640\"");
       expect(result).toContain("height=\"500\"");
@@ -51,7 +51,7 @@ describe("linkToFrame", () => {
 
   describe("Options", () => {
     it("applies default attributes", () => {
-      const result = linkToFrame("https://youtu.be/dQw4w9WgXcQ", {
+      const result = linkToIframe("https://youtu.be/dQw4w9WgXcQ", {
         defaultAttributes: {
           width: 640,
           height: 480,
@@ -64,7 +64,7 @@ describe("linkToFrame", () => {
     });
 
     it("overrides transformer attributes with default attributes", () => {
-      const result = linkToFrame("https://youtu.be/dQw4w9WgXcQ", {
+      const result = linkToIframe("https://youtu.be/dQw4w9WgXcQ", {
         defaultAttributes: {
           width: 800,
           height: 600,
@@ -77,7 +77,7 @@ describe("linkToFrame", () => {
     });
 
     it("allows custom transformers", () => {
-      const result = linkToFrame("https://example.com/custom-video/123", {
+      const result = linkToIframe("https://example.com/custom-video/123", {
         additionalTransformers: [
           {
             pattern: /example\.com\/custom-video\/(\d+)/,
@@ -86,6 +86,8 @@ describe("linkToFrame", () => {
               width: 400,
               height: 300,
             }),
+            key: "custom-video",
+            name: "Custom Video",
           },
         ],
       });
@@ -96,7 +98,7 @@ describe("linkToFrame", () => {
   });
 
   it("returns null if no transformer matches", () => {
-    const result = linkToFrame("https://example.com/no-match");
+    const result = linkToIframe("https://example.com/no-match");
     expect(result).toBeNull();
   });
 }); 

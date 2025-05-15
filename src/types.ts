@@ -25,7 +25,7 @@ export interface Transformer {
   transform: (url: string, matches: RegExpExecArray) => IframeAttributes | null;
 }
 
-export interface LinkToFrameOptions {
+export interface LinkToIframeOptions {
   /** Default attributes to apply to all iframes */
   defaultAttributes?: Partial<IframeAttributes>;
   

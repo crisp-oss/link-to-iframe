@@ -1,4 +1,4 @@
-import { IframeAttributes, LinkToFrameOptions, Transformer } from "./types";
+import { IframeAttributes, LinkToIframeOptions, Transformer } from "./types";
 import { defaultTransformers } from "./transformers";
 
 /**
@@ -8,7 +8,7 @@ import { defaultTransformers } from "./transformers";
  * @param options Configuration options
  * @returns HTML iframe string or null if no transformer matches
  */
-export function linkToFrame(url: string, options: LinkToFrameOptions = {}): string | null {
+export function linkToIframe(url: string, options: LinkToIframeOptions = {}): string | null {
   const { defaultAttributes = {}, additionalTransformers = [] } = options;
   
   // Combine default transformers with any additional transformers
@@ -73,10 +73,10 @@ function renderIframe(attributes: IframeAttributes): string {
     .filter(Boolean)
     .join(" ");
   
-  let html = `<iframe ${attributesString}></iframe>`;
+  const html = `<iframe ${attributesString}></iframe>`;
   
   return html;
 }
 
-export { Transformer, IframeAttributes, LinkToFrameOptions };
+export { Transformer, IframeAttributes, LinkToIframeOptions };
 export * from "./transformers"; 
