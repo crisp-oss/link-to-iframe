@@ -61,12 +61,6 @@ function renderIframe(attributes: IframeAttributes): string {
   // Create a copy to prevent modifying the original
   const processedAttributes = { ...attributes };
   
-  // Extract special attributes
-  const isSutori = processedAttributes["data-sutori-scripts"] === "true";
-  
-  // Remove non-standard attributes
-  delete processedAttributes["data-sutori-scripts"];
-  
   const attributesString = Object.entries(processedAttributes)
     .map(([key, value]) => {
       // Handle boolean attributes (like allowfullscreen)
@@ -80,13 +74,6 @@ function renderIframe(attributes: IframeAttributes): string {
     .join(" ");
   
   let html = `<iframe ${attributesString}></iframe>`;
-  
-  // Add Sutori script tags if needed
-  if (isSutori) {
-    html = `<script src="https://assets.sutori.com/frontend-assets/assets/iframeResizer.js"></script>` + 
-           html + 
-           `<script src="https://assets.sutori.com/frontend-assets/assets/iframeResizer.executer.js"></script>`;
-  }
   
   return html;
 }

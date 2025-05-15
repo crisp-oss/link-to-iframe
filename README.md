@@ -101,9 +101,54 @@ Currently, the following services are supported out of the box:
 - Figma (supports formats: figma.com/file/ID/Project-Name, figma.com/proto/ID/Project-Name, figma.com/design/ID/Project-Name)
 - Google Maps (supports formats: google.com/maps?..., google.com/maps/place/..., goo.gl/maps/...)
 - Google Docs (supports formats: docs.google.com/document/d/..., docs.google.com/spreadsheets/d/..., docs.google.com/presentation/d/...)
+- Google Drive (supports embedding Google Drive files)
+- TypeForm (supports formats: form.typeform.com/to/FORM_ID, [workspace].typeform.com/to/FORM_ID)
+- Abstract
+- InVision
+- Framer
+- Mixpanel
 - PDF (supports embedding PDF files)
+- Whimsical
+- Miro
+- Sketch
+- Excalidraw
+- Replit
+- Hex
+- Deepnote
+- GitLab
+- Jira
+- Trello
+- GitHub
+- Slack
+- Asana
+- Pitch
+- Dropbox
+- Zoom
+- OneDrive
+- Amplitude
+- Claap
+- Box
+- Linear
+- LucidApp
+- Monday
+- LinkedIn
+- Eraser
+- PagerDuty
+- ClickUp
+- Adobe XD
+- Plus
+- Instagram
+- Wikipedia
+- SoundCloud
+- Amazon
+- Canva
+- Airtable
+- Calendly
+- Cal.com
+- Sutori
+- Guideflow
+- YouForm
 - CodePen (supports formats: codepen.io/username/pen/penId, codepen.io/username/full/penId)
-- Typeform (supports formats: form.typeform.com/to/FORM_ID, [workspace].typeform.com/to/FORM_ID)
 
 ### Contributing New Services
 
