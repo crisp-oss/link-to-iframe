@@ -6,7 +6,7 @@ test/
 __tests__/
 *.test.ts
 *.spec.ts
-
+examples/
 # TypeScript config
 tsconfig.json
 tsconfig.*.json

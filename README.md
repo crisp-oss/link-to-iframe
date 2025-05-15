@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/link-to-iframe.svg)](https://www.npmjs.com/package/link-to-iframe) [![Downloads](https://img.shields.io/npm/dt/link-to-iframe.svg)](https://www.npmjs.com/package/link-to-iframe)
 
-A TypeScript package that transforms URLs from various services (YouTube, Loom, etc.) into embeddable iframe HTML.
+A TypeScript package that transforms URLs from various services (YouTube, Loom, Asciinema, etc.) into embeddable iframe HTML.
 
 **😘 Maintainer**: [@baptistejamin](https://github.com/baptistejamin)
 
@@ -89,6 +89,7 @@ Currently, the following services are supported out of the box:
 
 - YouTube (supports formats: youtube.com/watch, youtu.be/ID, youtube.com/embed)
 - Loom (supports format: loom.com/share)
+- Asciinema (supports format: asciinema.org/a/ID with query parameters like theme, speed, and start time)
 
 ### Contributing New Services
 

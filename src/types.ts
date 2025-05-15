@@ -10,7 +10,10 @@ export interface IframeAttributes {
 
 export interface Transformer {
   /** Regular expression that matches the URL pattern */
-  pattern: RegExp;
+  pattern?: RegExp;
+  
+  /** Multiple regular expressions that match URL patterns */
+  patterns?: RegExp[];
   
   /** Function to transform a URL into iframe attributes */
   transform: (url: string, matches: RegExpExecArray) => IframeAttributes | null;

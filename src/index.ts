@@ -16,14 +16,33 @@ export function linkToFrame(url: string, options: LinkToFrameOptions = {}): stri
   
   // Try each transformer
   for (const transformer of transformers) {
-    const match = transformer.pattern.exec(url);
-    if (match) {
-      const attributes = transformer.transform(url, match);
-      
-      if (attributes) {
-        // Merge transformer-specific attributes with default attributes
-        // Default attributes take precedence
-        return renderIframe({ ...attributes, ...defaultAttributes });
+    // Check single pattern
+    if (transformer.pattern) {
+      const match = transformer.pattern.exec(url);
+      if (match) {
+        const attributes = transformer.transform(url, match);
+        
+        if (attributes) {
+          // Merge transformer-specific attributes with default attributes
+          // Default attributes take precedence
+          return renderIframe({ ...attributes, ...defaultAttributes });
+        }
+      }
+    }
+    
+    // Check multiple patterns if available
+    if (transformer.patterns) {
+      for (const pattern of transformer.patterns) {
+        const match = pattern.exec(url);
+        if (match) {
+          const attributes = transformer.transform(url, match);
+          
+          if (attributes) {
+            // Merge transformer-specific attributes with default attributes
+            // Default attributes take precedence
+            return renderIframe({ ...attributes, ...defaultAttributes });
+          }
+        }
       }
     }
   }
