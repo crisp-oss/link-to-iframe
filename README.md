@@ -59,6 +59,19 @@ const customHtml = linkToIframe("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {
 console.log(customHtml);
 // <iframe width="640" height="360" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: none;"></iframe>
 
+// Get attributes object instead of HTML
+const attributesObj = linkToIframe("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {
+  returnObject: true
+});
+console.log(attributesObj);
+// {
+//   src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+//   width: "560",
+//   height: "315",
+//   allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+//   allowfullscreen: true
+// }
+
 // Adding custom URL transformers
 import { Transformer } from "link-to-iframe";
 
@@ -164,6 +177,25 @@ You can customize the output in two ways:
 ### Default Width and Height
 
 By default, all iframes are rendered with a width of 560 and height of 315 pixels (standard YouTube dimensions). You can customize these values using the `defaultAttributes` option.
+
+### Return Object Instead of HTML
+
+By default, the `linkToIframe` function returns an HTML string. You can set the `returnObject` option to `true` to get the attributes object instead:
+
+```typescript
+const attributes = linkToIframe("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {
+  returnObject: true
+});
+
+// Now you can use the attributes with your own templating system
+// For example, with React:
+// <iframe {...attributes}></iframe>
+```
+
+This is useful if you want to:
+- Use the attributes with your own templating/rendering system
+- Modify the attributes before rendering
+- Use with markdown or other formatting systems
 
 ## License
 

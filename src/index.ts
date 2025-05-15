@@ -2,14 +2,14 @@ import { IframeAttributes, LinkToIframeOptions, Transformer } from "./types";
 import { defaultTransformers } from "./transformers";
 
 /**
- * Convert a URL to an iframe HTML string
+ * Convert a URL to an iframe HTML string or attributes object
  * 
  * @param url URL to convert to an iframe
  * @param options Configuration options
- * @returns HTML iframe string or null if no transformer matches
+ * @returns HTML iframe string, attributes object, or null if no transformer matches
  */
-export function linkToIframe(url: string, options: LinkToIframeOptions = {}): string | null {
-  const { defaultAttributes = {}, additionalTransformers = [] } = options;
+export function linkToIframe(url: string, options: LinkToIframeOptions = {}): string | IframeAttributes | null {
+  const { defaultAttributes = {}, additionalTransformers = [], returnObject = false } = options;
   
   // Combine default transformers with any additional transformers
   const transformers = [...defaultTransformers, ...additionalTransformers];
@@ -25,7 +25,10 @@ export function linkToIframe(url: string, options: LinkToIframeOptions = {}): st
         if (attributes) {
           // Merge transformer-specific attributes with default attributes
           // Default attributes take precedence
-          return renderIframe({ ...attributes, ...defaultAttributes });
+          const mergedAttributes = { ...attributes, ...defaultAttributes };
+          
+          // Return attributes object or rendered iframe based on options
+          return returnObject ? mergedAttributes : renderIframe(mergedAttributes);
         }
       }
     }
@@ -40,7 +43,10 @@ export function linkToIframe(url: string, options: LinkToIframeOptions = {}): st
           if (attributes) {
             // Merge transformer-specific attributes with default attributes
             // Default attributes take precedence
-            return renderIframe({ ...attributes, ...defaultAttributes });
+            const mergedAttributes = { ...attributes, ...defaultAttributes };
+            
+            // Return attributes object or rendered iframe based on options
+            return returnObject ? mergedAttributes : renderIframe(mergedAttributes);
           }
         }
       }

@@ -95,10 +95,44 @@ describe("linkToIframe", () => {
       expect(result).toContain("width=\"400\"");
       expect(result).toContain("height=\"300\"");
     });
+
+    it("returns attributes object when returnObject is true", () => {
+      const result = linkToIframe("https://youtu.be/dQw4w9WgXcQ", {
+        returnObject: true,
+      });
+      expect(typeof result).toBe("object");
+      expect(result).not.toBeNull();
+      expect(result).toHaveProperty("src", "https://www.youtube.com/embed/dQw4w9WgXcQ");
+      expect(result).toHaveProperty("width", 560);
+      expect(result).toHaveProperty("height", 315);
+      expect(result).toHaveProperty("allowfullscreen", true);
+    });
+
+    it("applies default attributes when returning object", () => {
+      const result = linkToIframe("https://youtu.be/dQw4w9WgXcQ", {
+        returnObject: true,
+        defaultAttributes: {
+          width: 800,
+          height: 600,
+          class: "custom-iframe",
+        },
+      });
+      expect(typeof result).toBe("object");
+      expect(result).not.toBeNull();
+      expect(result).toHaveProperty("src", "https://www.youtube.com/embed/dQw4w9WgXcQ");
+      expect(result).toHaveProperty("width", 800);
+      expect(result).toHaveProperty("height", 600);
+      expect(result).toHaveProperty("class", "custom-iframe");
+    });
   });
 
   it("returns null if no transformer matches", () => {
     const result = linkToIframe("https://example.com/no-match");
+    expect(result).toBeNull();
+  });
+
+  it("returns null if no transformer matches with returnObject option", () => {
+    const result = linkToIframe("https://example.com/no-match", { returnObject: true });
     expect(result).toBeNull();
   });
 }); 

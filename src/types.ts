@@ -31,4 +31,7 @@ export interface LinkToIframeOptions {
   
   /** Additional transformers to use */
   additionalTransformers?: Transformer[];
+
+  /** Return the attributes object instead of HTML string */
+  returnObject?: boolean;
 } 
