@@ -90,6 +90,11 @@ Currently, the following services are supported out of the box:
 - YouTube (supports formats: youtube.com/watch, youtu.be/ID, youtube.com/embed)
 - Loom (supports format: loom.com/share)
 - Asciinema (supports format: asciinema.org/a/ID with query parameters like theme, speed, and start time)
+- Cleanshot (supports format: cleanshot.com/image/ID)
+- Dailymotion (supports format: dailymotion.com/video/ID)
+- Streamable (supports format: streamable.com/ID)
+- TikTok (supports format: tiktok.com/@username/video/ID)
+- Wistia (supports format: wistia.com/medias/ID)
 
 ### Contributing New Services
 
