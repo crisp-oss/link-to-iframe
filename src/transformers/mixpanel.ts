@@ -7,6 +7,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://mixpanel.com/report/[PROJECT_ID]/[REPORT_ID]
  */
 export const mixpanelTransformer: Transformer = {
+  key: "mixpanel",
+  name: "Mixpanel",
   pattern: /https?:\/\/mixpanel\.com\/(?:project|report)\/(\d+)(?:\/(?:view|dashboard))?\/(\d+)/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes | null => {

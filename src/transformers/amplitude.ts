@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - analytics.amplitude.com/org/PROJECT/chart/CHART_ID
  */
 export const amplitudeTransformer: Transformer = {
+  key: "amplitude",
+  name: "Amplitude",
   pattern: /(?:https?:\/\/)?(?:www\.)?analytics\.amplitude\.com\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/(?:dashboard|chart)\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

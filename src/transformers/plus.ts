@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - plus.app.co/TEAM/docs/DOC_ID
  */
 export const plusTransformer: Transformer = {
+  key: "plus",
+  name: "Plus",
   pattern: /(?:https?:\/\/)?(?:www\.)?plus\.app\.co\/([a-zA-Z0-9_-]+)\/(?:whiteboard|docs)\/([a-zA-Z0-9_-]+)(?:\/.*)?(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

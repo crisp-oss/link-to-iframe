@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.eraser.io/workspace/WORKSPACE_ID
  */
 export const eraserTransformer: Transformer = {
+  key: "eraser",
+  name: "Eraser",
   pattern: /(?:https?:\/\/)?(?:www\.)?app\.eraser\.io\/workspace\/([a-zA-Z0-9_-]+)(?:\/.*)?(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

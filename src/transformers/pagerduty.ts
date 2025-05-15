@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - ACCOUNT.pagerduty.com/dashboards/DASHBOARD_ID
  */
 export const pagerdutyTransformer: Transformer = {
+  key: "pagerduty",
+  name: "Pagerduty",
   patterns: [
     // Incident pattern
     /(?:https?:\/\/)?([a-zA-Z0-9_-]+)\.pagerduty\.com\/incidents\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,

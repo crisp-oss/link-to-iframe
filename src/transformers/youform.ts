@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.youform.com/forms/FORM_ID
  */
 export const youformTransformer: Transformer = {
+  key: "youform",
+  name: "Youform",
   pattern: /(?:https?:\/\/)?(?:www\.)?app\.youform\.com\/forms\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

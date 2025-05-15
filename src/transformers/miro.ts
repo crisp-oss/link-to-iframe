@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - miro.com/app/board/BOARD_ID/
  */
 export const miroTransformer: Transformer = {
+  key: "miro",
+  name: "Miro",
   pattern: /(?:https?:\/\/)?(?:www\.)?miro\.com\/app\/board\/([a-zA-Z0-9_-]+)\/?/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

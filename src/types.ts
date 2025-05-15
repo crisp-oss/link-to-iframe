@@ -9,6 +9,12 @@ export interface IframeAttributes {
 }
 
 export interface Transformer {
+  /** Unique key identifier for the transformer */
+  key: string;
+  
+  /** Display name of the transformer */
+  name: string;
+  
   /** Regular expression that matches the URL pattern */
   pattern?: RegExp;
   

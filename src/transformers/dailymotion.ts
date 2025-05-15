@@ -7,6 +7,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://dai.ly/VIDEO_ID
  */
 export const dailymotionTransformer: Transformer = {
+  key: "dailymotion",
+  name: "Dailymotion",
   patterns: [
     // www.dailymotion.com/video/
     /https?:\/\/(?:www\.)?dailymotion\.com\/video\/([a-zA-Z0-9]+)(?:\?.*)?/i,

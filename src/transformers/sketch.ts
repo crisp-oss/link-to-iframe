@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - sketch.com/s/DOCUMENT_ID
  */
 export const sketchTransformer: Transformer = {
+  key: "sketch",
+  name: "Sketch",
   pattern: /(?:https?:\/\/)?(?:www\.)?sketch\.com\/s\/([a-zA-Z0-9]+)(?:\/.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

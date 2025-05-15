@@ -8,6 +8,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://PROJECT_NAME.framer.app/
  */
 export const framerTransformer: Transformer = {
+  key: "framer",
+  name: "Framer",
   patterns: [
     // framer.com/share or /embed
     /https?:\/\/framer\.com\/(?:share|embed)\/([^/]+)/i,

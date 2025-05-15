@@ -8,6 +8,8 @@ import { Transformer } from "../types";
  * - player.vimeo.com/video/123456789
  */
 export const vimeoTransformer: Transformer = {
+  key: "vimeo",
+  name: "Vimeo",
   pattern: /(?:https?:\/\/)?(?:www\.|player\.)?vimeo\.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^/]*)\/videos\/|video\/|)(\d+)(?:|\/\?)/i,
   transform: (url, matches) => {
     const videoId = matches[1];

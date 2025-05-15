@@ -9,6 +9,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - m.soundcloud.com/artist/track
  */
 export const soundcloudTransformer: Transformer = {
+  key: "soundcloud",
+  name: "Soundcloud",
   patterns: [
     // Standard track pattern
     /https?:\/\/(?:www\.|m\.)?soundcloud\.com\/([^/]+)\/(?!sets|playlists)([^/]+)(?:\?.*)?$/i,

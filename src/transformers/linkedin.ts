@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - linkedin.com/posts/USER_HANDLE_POST_ID
  */
 export const linkedinTransformer: Transformer = {
+  key: "linkedin",
+  name: "Linkedin",
   patterns: [
     // Embed feed update pattern
     /(?:https?:\/\/)?(?:www\.)?linkedin\.com\/embed\/feed\/update\/urn:li:activity:([a-zA-Z0-9]+)(?:\?.*)?$/i,

@@ -8,6 +8,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://m.tiktok.com/v/VIDEO_ID.html
  */
 export const tiktokTransformer: Transformer = {
+  key: "tiktok",
+  name: "Tiktok",
   patterns: [
     // Standard format: tiktok.com/@username/video/ID
     /https?:\/\/(?:www\.)?tiktok\.com\/@[^/]+\/video\/(\d+)(?:\?.*)?/i,

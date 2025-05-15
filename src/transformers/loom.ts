@@ -6,6 +6,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://www.loom.com/share/VIDEO_ID
  */
 export const loomTransformer: Transformer = {
+  key: "loom",
+  name: "Loom",
   patterns: [
     // www.loom.com/share/
     /https?:\/\/www\.loom\.com\/share\/([a-z0-9]+)/i,

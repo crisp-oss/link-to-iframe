@@ -8,6 +8,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.box.com/folder/FOLDER_ID
  */
 export const boxTransformer: Transformer = {
+  key: "box",
+  name: "Box",
   patterns: [
     // Shared link pattern
     /(?:https?:\/\/)?(?:www\.)?app\.box\.com\/s\/([a-zA-Z0-9]+)(?:\?.*)?$/i,

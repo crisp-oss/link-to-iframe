@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - view.monday.com/embed/BOARD_ID
  */
 export const mondayTransformer: Transformer = {
+  key: "monday",
+  name: "Monday",
   patterns: [
     // Regular view pattern
     /(?:https?:\/\/)?(?:www\.)?view\.monday\.com\/([a-zA-Z0-9-]+)(?:\?.*)?$/i,

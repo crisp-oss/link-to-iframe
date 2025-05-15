@@ -9,6 +9,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - a.co/d/ASIN
  */
 export const amazonTransformer: Transformer = {
+  key: "amazon",
+  name: "Amazon",
   patterns: [
     // Standard product URL format
     /https?:\/\/(?:www\.)?amazon\.(?:com|co\.uk|de|fr|co\.jp|ca|in|es|it)\/(?:.+\/)?dp\/([A-Z0-9]{10})(?:\/|\?|$)/i,

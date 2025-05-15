@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - www.sutori.com/en/story/STORY_ID
  */
 export const sutoriTransformer: Transformer = {
+  key: "sutori",
+  name: "Sutori",
   pattern: /(?:https?:\/\/)?(?:www\.)?sutori\.com\/(?:en\/)?story\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes | null => {

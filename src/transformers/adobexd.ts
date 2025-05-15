@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - xd.adobe.com/spec/SPEC_ID
  */
 export const adobexdTransformer: Transformer = {
+  key: "adobexd",
+  name: "Adobe XD",
   patterns: [
     // Design view pattern
     /(?:https?:\/\/)?(?:www\.)?xd\.adobe\.com\/view\/([a-zA-Z0-9-]+)(?:\/.*)?(?:\?.*)?$/i,

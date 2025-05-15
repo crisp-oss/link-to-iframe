@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - WORKSPACE.slack.com/archives/CHANNEL/TIMESTAMP
  */
 export const slackTransformer: Transformer = {
+  key: "slack",
+  name: "Slack",
   pattern: /(?:https?:\/\/)?([a-zA-Z0-9_-]+)\.slack\.com\/archives\/([a-zA-Z0-9_-]+)(?:\/([0-9.]+))?(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

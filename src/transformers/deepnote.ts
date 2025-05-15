@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - deepnote.com/workspace/WORKSPACE-ID/PROJECT-NAME-PROJECT-ID
  */
 export const deepnoteTransformer: Transformer = {
+  key: "deepnote",
+  name: "Deepnote",
   pattern: /(?:https?:\/\/)?(?:www\.)?deepnote\.com\/workspace\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)-([a-zA-Z0-9]+)(?:\/.*)?$/i,
   
   transform: (url: string): IframeAttributes => {

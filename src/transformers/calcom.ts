@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.cal.com/USERNAME/EVENT_TYPE
  */
 export const calcomTransformer: Transformer = {
+  key: "calcom",
+  name: "Cal.com",
   patterns: [
     // Cal.com main domain
     /(?:https?:\/\/)?(?:www\.)?cal\.com\/([a-zA-Z0-9_-]+)(?:\/([a-zA-Z0-9_-]+))?(?:\?.*)?$/i,

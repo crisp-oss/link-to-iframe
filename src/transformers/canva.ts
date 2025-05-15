@@ -8,6 +8,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - www.canva.com/design/DESIGN_ID/view
  */
 export const canvaTransformer: Transformer = {
+  key: "canva",
+  name: "Canva",
   patterns: [
     // Standard design URL format
     /https?:\/\/(?:www\.)?canva\.com\/design\/([A-Za-z0-9_-]+)(?:\/view)?(?:\/[^?]+)?(?:\?.*)?$/i,

@@ -7,6 +7,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://[workspace].invisionapp.com/prototype/[PROJECT_NAME]/[SCREEN_ID]
  */
 export const invisionTransformer: Transformer = {
+  key: "invision",
+  name: "Invision",
   patterns: [
     // Projects share link
     /https?:\/\/projects\.invisionapp\.com\/share\/([A-Z0-9]+)/i,

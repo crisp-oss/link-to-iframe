@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - replit.com/@USERNAME/PROJECT_NAME
  */
 export const replitTransformer: Transformer = {
+  key: "replit",
+  name: "Replit",
   pattern: /(?:https?:\/\/)?(?:www\.)?replit\.com\/@([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

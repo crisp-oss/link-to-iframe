@@ -10,6 +10,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - docs.google.com/viewer?url=URL_TO_PDF&embedded=true
  */
 export const googleDocsTransformer: Transformer = {
+  key: "google-docs",
+  name: "Google Docs",
   patterns: [
     // Pattern for Google Docs, Sheets, and Presentations
     /(?:https?:\/\/)?(?:www\.)?docs\.google\.com\/(?:(document|spreadsheets|presentation)\/d\/([a-zA-Z0-9_-]+)(?:\/.*)?(?:\?(?:.*&)?slide=(?:id\.)?([^&#]+))?)/i,

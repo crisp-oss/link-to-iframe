@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - github.com/USERNAME/REPOSITORY/blob/BRANCH/PATH/TO/FILE
  */
 export const githubTransformer: Transformer = {
+  key: "github",
+  name: "GitHub",
   pattern: /(?:https?:\/\/)?(?:www\.)?github\.com\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)(?:\/blob\/([a-zA-Z0-9_.-]+)\/(.+))?/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

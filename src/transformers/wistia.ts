@@ -8,6 +8,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://wistia.com/medias/VIDEO_ID
  */
 export const wistiaTransformer: Transformer = {
+  key: "wistia",
+  name: "Wistia",
   patterns: [
     // company-name.wistia.com/medias/ID
     /https?:\/\/(.+?)\.wistia\.com\/medias\/([a-zA-Z0-9]+)(?:\?.*)?/i,

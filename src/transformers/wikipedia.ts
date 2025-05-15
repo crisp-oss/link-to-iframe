@@ -9,6 +9,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - And other language variants (de.wikipedia.org, fr.wikipedia.org, etc.)
  */
 export const wikipediaTransformer: Transformer = {
+  key: "wikipedia",
+  name: "Wikipedia",
   pattern: /https?:\/\/(?:(?:([a-z]+)\.)?(?:m\.)?wikipedia\.org\/wiki\/([^#?]+)(?:\?.*)?(?:#.*)?)/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes | null => {

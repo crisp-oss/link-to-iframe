@@ -9,6 +9,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - airtable.com/embed/shr[ID] (embed links)
  */
 export const airtableTransformer: Transformer = {
+  key: "airtable",
+  name: "Airtable",
   patterns: [
     // Standard shared view format
     /https?:\/\/(?:www\.)?airtable\.com\/(?:embed\/)?(shr[a-zA-Z0-9]+)(?:\?.*)?$/i,

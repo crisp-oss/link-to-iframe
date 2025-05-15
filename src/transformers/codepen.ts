@@ -7,6 +7,8 @@ import { Transformer } from "../types";
  * - codepen.io/username/full/penId
  */
 export const codepenTransformer: Transformer = {
+  key: "codepen",
+  name: "Codepen",
   pattern: /(?:https?:\/\/)?(?:www\.)?codepen\.io\/([^/]+)\/(?:pen|full)\/([a-zA-Z0-9]+)/i,
   transform: (url, matches) => {
     const username = matches[1];

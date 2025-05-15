@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - whimsical.com/DIAGRAM_NAME-DIAGRAM_ID
  */
 export const whimsicalTransformer: Transformer = {
+  key: "whimsical",
+  name: "Whimsical",
   pattern: /(?:https?:\/\/)?(?:www\.)?whimsical\.com\/(?:([a-zA-Z0-9-]+)(?:-([a-zA-Z0-9]+))?)(?:\?.*)?$/i,
   
   transform: (url: string): IframeAttributes => {

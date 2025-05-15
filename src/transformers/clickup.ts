@@ -8,6 +8,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.clickup.com/v/vi/DASHBOARD_ID
  */
 export const clickupTransformer: Transformer = {
+  key: "clickup",
+  name: "Clickup",
   patterns: [
     // Task pattern
     /(?:https?:\/\/)?(?:www\.)?app\.clickup\.com\/t\/([a-zA-Z0-9]+)(?:\?.*)?$/i,

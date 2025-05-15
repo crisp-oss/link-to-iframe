@@ -8,6 +8,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - lucid.app/embeds/link?document=DOCUMENT_ID&clientId=CLIENT_ID
  */
 export const lucidAppTransformer: Transformer = {
+  key: "lucidapp",
+  name: "Lucid App",
   patterns: [
     // Embedded document pattern
     /(?:https?:\/\/)?(?:www\.)?lucid\.app\/documents\/embedded\/([a-zA-Z0-9-]+)(?:\/.*)?(?:\?.*)?$/i,

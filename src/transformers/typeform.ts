@@ -7,6 +7,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://[WORKSPACE].typeform.com/to/FORM_ID
  */
 export const typeformTransformer: Transformer = {
+  key: "typeform",
+  name: "Typeform",
   patterns: [
     // form.typeform.com/to/
     /https?:\/\/form\.typeform\.com\/to\/([a-zA-Z0-9]+)/i,

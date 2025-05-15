@@ -7,6 +7,8 @@ import { Transformer } from "../types";
  * - x.com/username/status/123456789
  */
 export const twitterTransformer: Transformer = {
+  key: "twitter",
+  name: "Twitter",
   pattern: /(?:https?:\/\/)?(?:www\.)?(?:twitter\.com|x\.com)\/([^/]+)\/status\/(\d+)/i,
   transform: (url, matches) => {
     const tweetId = matches[2];

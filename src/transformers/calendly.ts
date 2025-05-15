@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - calendly.com/USERNAME/EVENT_TYPE
  */
 export const calendlyTransformer: Transformer = {
+  key: "calendly",
+  name: "Calendly",
   pattern: /(?:https?:\/\/)?(?:www\.)?calendly\.com\/([a-zA-Z0-9_-]+)(?:\/([a-zA-Z0-9_-]+))?(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

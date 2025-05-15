@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.hex.tech/UUID/app/APP_ID
  */
 export const hexTransformer: Transformer = {
+  key: "hex",
+  name: "Hex",
   pattern: /(?:https?:\/\/)?(?:www\.)?app\.hex\.tech\/([a-zA-Z0-9-]+)\/app\/([a-zA-Z0-9-]+)(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

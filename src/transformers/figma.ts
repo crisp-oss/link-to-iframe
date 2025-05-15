@@ -8,6 +8,8 @@ import { Transformer } from "../types";
  * - figma.com/design/abcdef/Project-Name
  */
 export const figmaTransformer: Transformer = {
+  key: "figma",
+  name: "Figma",
   pattern: /(?:https?:\/\/)?(?:www\.)?figma\.com\/(file|proto|design)\/([a-zA-Z0-9]+)(?:\/[^?]+)?/i,
   transform: (url, matches) => {
     const fileType = matches[1]; // file, proto, or design

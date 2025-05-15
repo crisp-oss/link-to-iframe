@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - drive.google.com/file/d/FILE_ID/view
  */
 export const googleDriveTransformer: Transformer = {
+  key: "google-drive",
+  name: "Google Drive",
   patterns: [
     // Pattern for Google Drive files
     /(?:https?:\/\/)?(?:www\.)?drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)(?:\/.*)?/i,

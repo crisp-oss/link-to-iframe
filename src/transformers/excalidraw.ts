@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - excalidraw.com/#DRAWING_ID
  */
 export const excalidrawTransformer: Transformer = {
+  key: "excalidraw",
+  name: "Excalidraw",
   pattern: /(?:https?:\/\/)?(?:www\.)?excalidraw\.com\/#([a-zA-Z0-9_-]+)(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

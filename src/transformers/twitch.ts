@@ -9,6 +9,8 @@ import { Transformer } from "../types";
  * - clips.twitch.tv/Clip
  */
 export const twitchTransformer: Transformer = {
+  key: "twitch",
+  name: "Twitch",
   pattern: /(?:https?:\/\/)?(?:www\.|clips\.)?twitch\.tv\/(?:(videos|collections)\/)?([a-zA-Z0-9_-]+)/i,
   transform: (url, matches) => {
     const type = matches[1] || "";

@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - linear.app/TEAM/project/PROJECT_ID/PROJECT_NAME
  */
 export const linearTransformer: Transformer = {
+  key: "linear",
+  name: "Linear",
   patterns: [
     // Issue pattern
     /(?:https?:\/\/)?(?:www\.)?linear\.app\/([a-zA-Z0-9_-]+)\/issue\/([a-zA-Z0-9_-]+)(?:\/([^/?]+))?(?:\?.*)?$/i,

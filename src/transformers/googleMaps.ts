@@ -8,6 +8,8 @@ import { Transformer } from "../types";
  * - goo.gl/maps/... (short URLs)
  */
 export const googleMapsTransformer: Transformer = {
+  key: "google-maps",
+  name: "Google Maps",
   pattern: /(?:https?:\/\/)?(?:www\.)?(?:google\.com\/maps|goo\.gl\/maps)\/(?:place\/)?([^?]+)?(?:\?[^?]+)?/i,
   transform: (url) => {
     // Extract the source URL and convert it to an embed URL

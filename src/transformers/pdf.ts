@@ -6,6 +6,8 @@ import { Transformer, IframeAttributes } from "../types";
  * Supports any direct URL ending with .pdf
  */
 export const pdfTransformer: Transformer = {
+  key: "pdf",
+  name: "Pdf",
   pattern: /(?:https?:\/\/)?(?:[\w.-]+(?:\/[\w\d./-]*)?)\.pdf(?:\?.*)?$/i,
   
   transform: (url: string): IframeAttributes => {

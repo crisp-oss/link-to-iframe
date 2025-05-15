@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - dropbox.com/sh/FOLDER_ID/FOLDER_NAME
  */
 export const dropboxTransformer: Transformer = {
+  key: "dropbox",
+  name: "Dropbox",
   patterns: [
     // File pattern
     /(?:https?:\/\/)?(?:www\.)?dropbox\.com\/s\/([a-zA-Z0-9]+)\/([^?]+)(?:\?.*)?$/i,

@@ -6,6 +6,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://streamable.com/VIDEO_ID
  */
 export const streamableTransformer: Transformer = {
+  key: "streamable",
+  name: "Streamable",
   patterns: [
     // streamable.com/ID
     /https?:\/\/(?:www\.)?streamable\.com\/([a-zA-Z0-9]+)(?:\?.*)?/i,

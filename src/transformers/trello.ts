@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - trello.com/c/CARD_ID/CARD_NAME
  */
 export const trelloTransformer: Transformer = {
+  key: "trello",
+  name: "Trello",
   patterns: [
     // Board pattern
     /(?:https?:\/\/)?(?:www\.)?trello\.com\/b\/([a-zA-Z0-9]+)(?:\/([^/?]+))?(?:\?.*)?$/i,

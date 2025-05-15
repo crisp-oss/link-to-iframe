@@ -11,6 +11,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - www.instagram.com/tv/CODE
  */
 export const instagramTransformer: Transformer = {
+  key: "instagram",
+  name: "Instagram",
   patterns: [
     // Standard post format
     /https?:\/\/(?:www\.)?instagram\.com\/p\/([a-zA-Z0-9_-]+)(?:\/)?(?:\?.*)?$/i,

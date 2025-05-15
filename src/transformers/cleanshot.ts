@@ -6,6 +6,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://cln.sh/ID (alphanumeric ID)
  */
 export const cleanshotTransformer: Transformer = {
+  key: "cleanshot",
+  name: "Cleanshot",
   patterns: [
     // cln.sh/ID format
     /https?:\/\/cln\.sh\/([a-zA-Z0-9]+)(?:\?.*)?/i,

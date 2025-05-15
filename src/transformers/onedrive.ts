@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - onedrive.live.com/?cid=FOLDER_ID&id=ITEM_ID
  */
 export const onedriveTransformer: Transformer = {
+  key: "onedrive",
+  name: "Onedrive",
   patterns: [
     // Short link pattern
     /(?:https?:\/\/)?(?:www\.)?1drv\.ms\/([uf])\/([a-zA-Z0-9!_-]+)(?:\?.*)?$/i,

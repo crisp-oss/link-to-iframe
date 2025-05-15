@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.claap.io/r/VIDEO_ID
  */
 export const claapTransformer: Transformer = {
+  key: "claap",
+  name: "Claap",
   pattern: /(?:https?:\/\/)?(?:www\.|app\.)?claap\.io\/r\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

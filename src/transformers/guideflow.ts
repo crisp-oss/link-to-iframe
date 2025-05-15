@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.guideflow.com/embed/DEMO_ID
  */
 export const guideflowTransformer: Transformer = {
+  key: "guideflow",
+  name: "Guideflow",
   patterns: [
     // Player link pattern
     /(?:https?:\/\/)?(?:www\.)?app\.guideflow\.com\/player\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,

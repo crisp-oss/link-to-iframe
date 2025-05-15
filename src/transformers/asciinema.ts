@@ -7,6 +7,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://asciinema.org/a/ID?t=25&speed=2&theme=nord
  */
 export const asciinemaTransformer: Transformer = {
+  key: "asciinema",
+  name: "Asciinema",
   patterns: [
     // asciinema.org/a/ID with any query parameters
     /https?:\/\/asciinema\.org\/a\/([a-zA-Z0-9]+)(?:\?.*)?/i,

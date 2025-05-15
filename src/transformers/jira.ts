@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - ORGANIZATION.atlassian.net/jira/dashboards/ID
  */
 export const jiraTransformer: Transformer = {
+  key: "jira",
+  name: "Jira",
   patterns: [
     // Issue pattern
     /(?:https?:\/\/)?([a-zA-Z0-9_-]+)\.atlassian\.net\/browse\/([a-zA-Z0-9_-]+)-([0-9]+)(?:\?.*)?$/i,

@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.pitch.com/app/presentation/PRESENTATION_ID/SLIDE_ID
  */
 export const pitchTransformer: Transformer = {
+  key: "pitch",
+  name: "Pitch",
   pattern: /(?:https?:\/\/)?(?:www\.)?app\.pitch\.com\/app\/presentation\/([a-zA-Z0-9-]+)(?:\/([a-zA-Z0-9-]+))?(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

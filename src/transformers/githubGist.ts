@@ -6,6 +6,8 @@ import { Transformer } from "../types";
  * - gist.github.com/username/gistId
  */
 export const githubGistTransformer: Transformer = {
+  key: "github-gist",
+  name: "GitHub Gist",
   pattern: /(?:https?:\/\/)?(?:www\.)?gist\.github\.com\/([^/]+)\/([a-zA-Z0-9]+)/i,
   transform: (url, matches) => {
     const username = matches[1];

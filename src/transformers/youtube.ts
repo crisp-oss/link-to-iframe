@@ -13,6 +13,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://www.youtube.com/shorts/VIDEO_ID
  */
 export const youtubeTransformer: Transformer = {
+  key: "youtube",
+  name: "YouTube",
   patterns: [
     // www.youtube.com/watch?v=
     /https?:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/i,

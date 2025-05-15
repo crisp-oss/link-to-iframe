@@ -8,6 +8,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - gitlab.com/snippets/SNIPPET_ID
  */
 export const gitlabTransformer: Transformer = {
+  key: "gitlab",
+  name: "GitLab",
   patterns: [
     // Repository or file pattern
     /(?:https?:\/\/)?(?:www\.)?gitlab\.com\/([a-zA-Z0-9_.-]+)\/([a-zA-Z0-9_.-]+)(?:\/-\/blob\/([a-zA-Z0-9_.-]+)\/(.+))?/i,

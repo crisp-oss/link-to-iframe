@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - app.asana.com/0/PROJECT_ID
  */
 export const asanaTransformer: Transformer = {
+  key: "asana",
+  name: "Asana",
   pattern: /(?:https?:\/\/)?(?:www\.)?app\.asana\.com\/0\/([0-9]+)(?:\/([0-9]+))?(?:\?.*)?$/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes => {

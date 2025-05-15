@@ -7,6 +7,8 @@ import { Transformer, IframeAttributes } from "../types";
  * - zoom.us/recording/detail?meeting_id=MEETING_ID
  */
 export const zoomTransformer: Transformer = {
+  key: "zoom",
+  name: "Zoom",
   patterns: [
     // Recording share pattern
     /(?:https?:\/\/)?(?:www\.)?zoom\.us\/rec\/share\/([a-zA-Z0-9_-]+)(?:\?.*)?$/i,

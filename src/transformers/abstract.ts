@@ -7,6 +7,8 @@ import { IframeAttributes, Transformer } from "../types";
  * - https://app.abstract.com/share/[SHARE_ID]
  */
 export const abstractTransformer: Transformer = {
+  key: "abstract",
+  name: "Abstract",
   pattern: /https?:\/\/(?:share|app)\.abstract\.com\/(?:share\/)?([a-zA-Z0-9-]+)/i,
   
   transform: (url: string, matches: RegExpExecArray): IframeAttributes | null => {
