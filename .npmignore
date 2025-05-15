@@ -1,0 +1,53 @@
+# Source
+src/
+
+# Tests
+test/
+__tests__/
+*.test.ts
+*.spec.ts
+
+# TypeScript config
+tsconfig.json
+tsconfig.*.json
+
+# Build tools
+.github/
+.travis.yml
+.gitlab-ci.yml
+.circleci/
+.jenkins/
+.azure-pipelines/
+
+# Editor configs
+.vscode/
+.idea/
+*.sublime-*
+.editorconfig
+
+# Git
+.git/
+.gitignore
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Development
+.eslintrc*
+.prettierrc*
+.nvmrc
+.nycrc
+.nyc_output/
+coverage/
+node_modules/
+.DS_Store
+*.tgz
+
+# Examples and documentation
+examples/
+docs/
+*.md
+!README.md
+!LICENSE.md 

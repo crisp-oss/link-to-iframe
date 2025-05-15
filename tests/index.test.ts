@@ -1,0 +1,83 @@
+import { linkToFrame } from "../src/index";
+
+describe("linkToFrame", () => {
+  describe("YouTube transformer", () => {
+    it("transforms youtube.com URL", () => {
+      const result = linkToFrame("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+      expect(result).toContain("src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\"");
+      expect(result).toContain("width=\"560\"");
+      expect(result).toContain("height=\"315\"");
+      expect(result).toContain("allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"");
+      expect(result).toContain("allowfullscreen");
+    });
+
+    it("transforms youtu.be URL", () => {
+      const result = linkToFrame("https://youtu.be/dQw4w9WgXcQ");
+      expect(result).toContain("src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\"");
+      expect(result).toContain("width=\"560\"");
+      expect(result).toContain("height=\"315\"");
+    });
+  });
+
+  describe("Loom transformer", () => {
+    it("transforms loom URL", () => {
+      const result = linkToFrame("https://www.loom.com/share/abcdef123456");
+      expect(result).toContain("src=\"https://www.loom.com/embed/abcdef123456\"");
+      expect(result).toContain("width=\"560\"");
+      expect(result).toContain("height=\"315\"");
+      expect(result).toContain("frameborder=\"0\"");
+      expect(result).toContain("allowfullscreen");
+    });
+  });
+
+  describe("Options", () => {
+    it("applies default attributes", () => {
+      const result = linkToFrame("https://youtu.be/dQw4w9WgXcQ", {
+        defaultAttributes: {
+          width: 640,
+          height: 480,
+          class: "custom-iframe",
+        },
+      });
+      expect(result).toContain("width=\"640\"");
+      expect(result).toContain("height=\"480\"");
+      expect(result).toContain("class=\"custom-iframe\"");
+    });
+
+    it("overrides transformer attributes with default attributes", () => {
+      const result = linkToFrame("https://youtu.be/dQw4w9WgXcQ", {
+        defaultAttributes: {
+          width: 800,
+          height: 600,
+        },
+      });
+      expect(result).toContain("width=\"800\"");
+      expect(result).toContain("height=\"600\"");
+      expect(result).not.toContain("width=\"560\"");
+      expect(result).not.toContain("height=\"315\"");
+    });
+
+    it("allows custom transformers", () => {
+      const result = linkToFrame("https://example.com/custom-video/123", {
+        additionalTransformers: [
+          {
+            pattern: /example\.com\/custom-video\/(\d+)/,
+            transform: (_url, matches) => ({
+              src: `https://example.com/embed/${matches[1]}`,
+              width: 400,
+              height: 300,
+            }),
+          },
+        ],
+      });
+      expect(result).toContain("src=\"https://example.com/embed/123\"");
+      expect(result).toContain("width=\"400\"");
+      expect(result).toContain("height=\"300\"");
+    });
+  });
+
+  it("returns null if no transformer matches", () => {
+    const result = linkToFrame("https://example.com/no-match");
+    expect(result).toBeNull();
+  });
+}); 

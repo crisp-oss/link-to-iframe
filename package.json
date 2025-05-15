@@ -1,0 +1,45 @@
+{
+  "name": "link-to-iframe",
+  "version": "1.0.0",
+  "description": "Transform links to embeddable iframes",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "iframe",
+    "embed",
+    "link",
+    "url",
+    "transform",
+    "converter",
+    "html"
+  ],
+  "author": "Baptiste Jamin <baptiste@crisp.chat>",
+  "license": "MIT",
+  "homepage": "https://github.com/crisp-oss/link-to-iframe",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crisp-oss/link-to-iframe"
+  },
+  "bugs": {
+    "url": "https://github.com/crisp-oss/link-to-iframe/issues"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.3",
+    "@types/node": "20.4.5",
+    "@typescript-eslint/eslint-plugin": "7.1.0",
+    "@typescript-eslint/parser": "7.1.0",
+    "eslint": "8.56.0",
+    "jest": "29.6.2",
+    "ts-jest": "29.1.1",
+    "typescript": "5.1.6"
+  },
+  "files": [
+    "dist"
+  ]
+}
