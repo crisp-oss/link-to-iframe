@@ -21,11 +21,6 @@ fi
 echo "Building the project..."
 npm run build
 
-# Create dist directory in examples if it doesn't exist
-echo "Copying dist files to examples/dist..."
-mkdir -p examples/dist
-cp dist/link-to-iframe.umd.js examples/dist/
-
 # Start the dev server
 echo "Starting development server..."
 
