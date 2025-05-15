@@ -74,7 +74,7 @@ export function getAllTransformers(options: { includeAdditional?: Transformer[] 
     .map(transformer => ({
       key: transformer.key,
       name: transformer.name,
-      priority: transformer.priority ?? 0
+      priority: transformer.priority ?? 0,
     }))
     .sort((a, b) => b.priority - a.priority);
 }
